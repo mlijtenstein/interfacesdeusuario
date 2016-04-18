@@ -1,0 +1,135 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../iron-image/iron-image.html">
+<link rel="import" href="../iron-media-query/iron-media-query.html">
+
+<!--
+A responsive comment card element
+
+Example:
+
+    <comment-card></comment-card>
+
+@demo
+-->
+<dom-module id="comment-card">
+  <style>
+    :host {
+      display: block;
+      box-sizing: border-box;
+      margin: 1em;
+      padding: 1em;
+      min-width: 240px;
+      font-family: sans-serif;
+      border-radius: 2px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    }
+    :host.small {
+      margin: 1em 0;
+    }
+    iron-image {
+      width: 2em;
+      height: 2em;
+      border-radius: 1em;
+    }
+    #author-container {
+      display: flex;
+      align-items: center;
+    }
+    #author-name {
+      font-size: small;
+      padding-left: 1em;
+    }
+    #comment-body {
+      font-size: small;
+      font-weight: 300;
+      margin: 1em 1em 1em 3.5em;
+    }
+  </style>
+
+<template>
+    <iron-media-query query="[[ mediaQuery ]]" 
+                      query-matches="{{ tooSmall }}"></iron-media-query>
+    <div id="author-container">
+      <iron-image src="[[ author.image ]]" sizing="cover"></iron-image>
+      <span id="author-name">[[ author.name ]]</span>
+    </div>
+    <p id="comment-body">
+      <content></content>
+    </p>
+  </template>
+</dom-module>
+
+<script>
+
+  Polymer({
+    is: 'comment-card',
+    properties: {
+      author: {
+        type: Object,
+        // Use `value` to provides a default value for a property, by setting it
+        // on your element's prototype.
+        //
+        // If you provide a function, as we do here, Polymer will call that
+        // _per element instance_.
+        //
+        // We do that to ensure that each element gets its own copy of the
+        // value, rather than having it shared across all instances (via the
+        // prototype).
+        value: function() {
+          return {
+            name:  'Dimitri Glazkov',
+            image: 'https://pbs.twimg.com/profile_images/378800000822867536/3f5a00acf72df93528b6bb7cd0a4fd0c.jpeg',
+          };
+        }
+      },
+      mediaQuery: {
+        type: String,
+        value: function() {
+          return "(max-width: 320px)";
+        }
+      },
+      tooSmall: {
+        type: Boolean,
+        observer: '_tooSmallChanged'
+      }
+    },
+
+    _tooSmallChanged: function(newValue, oldValue) {
+      this.toggleClass('small', newValue);
+    },
+
+    // Element Lifecycle
+
+    ready: function() {
+      // `ready` is called after all elements have been configured, but
+      // propagates bottom-up. This element's children are ready, but parents
+      // are not.
+      //
+      // This is the point where you should make modifications to the DOM (when
+      // necessary), or kick off any processes the element wants to perform.
+    },
+    attached: function() {
+      // `attached` fires once the element and its parents have been inserted
+      // into a document.
+      //
+      // This is a good place to perform any work related to your element's
+      // visual state or active behavior (measuring sizes, beginning animations,
+      // loading resources, etc).
+    },
+    detached: function() {
+      // The analog to `attached`, `detached` fires when the element has been
+      // removed from a document.
+      //
+      // Use this to clean up anything you did in `attached`.
+    }
+  });
+</script>
