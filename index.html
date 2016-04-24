@@ -18,6 +18,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <link rel="import" href="../paper-menu.html">
   <link rel="import" href="../paper-item.html">
   <link rel="import" href="../paper-buton.html">
+  <link rel="import" href="book-detail.html">
+
 
 
  
@@ -111,6 +113,18 @@ paper-button{
 	color: white;
 }
 
+.libros{
+ 	padding-top: 150px;	
+    padding-bottom: 150px;
+    background-color: #cbc6c6;
+}
+
+h3 {
+    margin-right: 50%;
+    margin-left: 50%;
+    display: block;
+    font-size: 2em;
+}
 
   </style>
 
@@ -133,7 +147,7 @@ paper-button{
         </paper-menu>
       </div>
      </div>
-<div>
+</div>
 <div class="fr_introduccion">
 	<div>
 		<div class="frase">
@@ -142,8 +156,19 @@ paper-button{
 		</div>
 		<paper-button>VER INFO</paper-button>
 	</div>
+</div>
+
+<div class="libros">
+	<h3>Libros</h3>
 	
-	
+		<book-detail book='{"image":"http://salamandra.info/sites/default/files/styles/book_detail/public/books/covers/hp_y_la_piedra_filosofal_2014_300_rgb.jpg?itok=iLSw_lPt", "title":"Harry Potter y la piedra filosofal", "text":"Harry vive con sus horribles tíos y el insoportable primo Dudley, hasta que su ingreso en el Colegio Hogwarts de Magia y Hechicería cambia su vida para siempre. Allí aprenderá trucos y encantamientos fabulosos, y hará un puñado de buenos amigos... aunque también algunos temibles enemigos. Y, sobre todo, conocerá los secretos que lo ayudarán a cumplir con su destino."}'></book-detail>
+
+		<book-detail book='{"image":"http://salamandra.info/sites/default/files/styles/book_detail/public/books/covers/hp_y_la_piedra_filosofal_2014_300_rgb.jpg?itok=iLSw_lPt", "title":"Harry Potter y la piedra filosofal", "text":"Harry vive con sus horribles tíos y el insoportable primo Dudley, hasta que su ingreso en el Colegio Hogwarts de Magia y Hechicería cambia su vida para siempre. Allí aprenderá trucos y encantamientos fabulosos, y hará un puñado de buenos amigos... aunque también algunos temibles enemigos. Y, sobre todo, conocerá los secretos que lo ayudarán a cumplir con su destino."}'></book-detail>
+
+
+
+
+</div>	
 
   <!-- <iron-component-page src="comment-card.html"></iron-component-page> -->
 

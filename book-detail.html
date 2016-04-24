@@ -1,0 +1,92 @@
+
+
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../iron-image/iron-image.html">
+
+<dom-module id="book-detail">
+  <style>
+  :host {
+  	/*margin-top: .5rem;
+    margin-right: 2%;
+    margin-bottom: .5rem;
+    margin-left: 0;
+    width: 20%;
+    clear: left;
+    max-width: inherit;
+    height: 10em;
+    width: 4em;
+    background-color: black;
+    width: 25em;
+    height: 25em;*/
+    /*width: 250px;*/
+    width: 250px;
+   	height: 550px;
+   	background-color: black;
+   	display: block;
+   	margin: 0;
+   	padding: 0;
+   }
+
+
+   iron-image {
+      width: 20em;
+      height: 20em;
+      display: inherit;	
+    }
+
+    #book-container {
+      display: flex;
+      align-items: center;
+      width: 100%;
+    }
+    #book-title {
+      padding-left: 1em;
+      align-items: center;
+      width: 100%;
+      color: white;
+    }
+    #book-text {
+      font-size: small;
+      padding-left: 1em;
+      width: 90%;
+      color: white;
+      text-align: justify;
+    }
+
+  </style>
+
+
+  <template>
+  	<div id="book-container">
+      <iron-image src="[[ book.image ]]" sizing="contain"></iron-image>
+    </div>
+    <div id="book-title">
+    	<h4 >[[ book.title ]]</h4>
+    </div>
+    <div id="book-text">
+    	<span >[[ book.text ]]</span>
+    </div>
+  </template>
+
+</dom-module>
+
+
+<script>
+
+ Polymer({
+    is: 'book-detail',
+    properties: {
+    	book: {
+        	type: Object,
+        
+	        value: function() {
+	          return {
+	            image: '',
+	            title:  '',
+	            text: '',
+	          };
+        	}
+    	}
+    }
+});
+</script>
