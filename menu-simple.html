@@ -1,0 +1,182 @@
+
+
+<link rel="import" href="../polymer/polymer.html">
+<script src="../webcomponentsjs/webcomponents-lite.js"></script>
+  <link rel="import" href="../paper-menu.html">
+  <link rel="import" href="../paper-item.html">
+  <link rel="import" href="../paper-buton.html">
+  <link rel="import" href="../paper-menu-button.html">
+
+
+ <dom-module id="menu-simple">
+   <style>
+	  :host .small {
+
+	  }
+	
+	.menu {
+	    float: none;
+	    display: block;
+	    width: 100%;
+	    margin-right: auto;
+	    margin-left: auto;
+	    background-color: #232222;
+	}
+
+	.menu_navigation {
+		    width: 90%;
+		    margin-right: auto;
+		    margin-left: auto;
+		    z-index: 1000;
+		    min-height: 60px;
+		    max-width: 1200px;
+	}
+
+	.items {
+	    float: right;
+	    margin-top: 10px;
+	    margin-bottom: 10px;
+	}
+
+	.items_menu {
+	    display: inline-block;
+	    vertical-align: middle;
+	    padding-top: 10px;
+	    padding-right: 20px;
+	    padding-bottom: 10px;
+	    padding-left: 20px;
+	}
+
+	paper-menu{
+		float: right;
+		padding-right: 2em;
+	   display: inline-block;
+
+	}
+	paper-item {
+	    border-radius: 0.2em;
+	    font-size: 1em;
+		  object-position: center;
+	    vertical-align: middle;
+	    padding-top: 10px;
+	    padding-right: 30px;
+	    padding-bottom: 10px;
+	    padding-left: 30px;
+	    color: white;
+
+	}
+	paper-item:hover {
+	    background-color: white;
+	    color:grey;
+
+	}
+
+	.paper-blue{
+		background-color: #2faded;  
+		border-radius: 4px;
+		display: inline-block;
+
+
+	}
+
+	.paper-blue:hover{
+	  background-color: white;
+	  color:#2faded;
+	}
+
+
+  </style>
+
+  <template>
+    <div id="#menu" class="menu">
+     <div class="menu_navigation">
+       <div class="items">
+        <paper-menu>
+         <paper-item>Home</paper-item>
+          <paper-item>Autor</paper-item>
+          <paper-item>Libros</paper-item>
+          <paper-item class="paper-blue">Subscribite</paper-item>
+        </paper-menu>       
+      </div>
+     </div>
+	</div>
+
+	<!--<paper-menu-button>
+  		<paper-icon-button icon="menu" class="dropdown-trigger"></paper-icon-button>
+  			<paper-menu class="dropdown-content">
+    			<paper-item>Share</paper-item>
+    			<paper-item>Settings</paper-item>
+    			<paper-item>Help</paper-item>
+  			</paper-menu>
+	</paper-menu-button>-->
+  </template>
+</dom-module>
+
+<script>
+
+  Polymer({
+    is: 'menu-simple',
+    properties: {
+      list:{
+        type: Object,
+        // Use `value` to provides a default value for a property, by setting it
+        // on your element's prototype.
+        //
+        // If you provide a function, as we do here, Polymer will call that
+        // _per element instance_.
+        //
+        // We do that to ensure that each element gets its own copy of the
+        // value, rather than having it shared across all instances (via the
+        // prototype).
+        value: function() {
+          return {
+            text1: 'Home',
+            text2: 'Autor',
+            text3: 'Libros',
+            button1: 'Subscribite',
+          };
+        }
+      },
+      mediaQuery: {
+        type: String,
+        value: function() {
+          return "(max-width: 320px)";
+        }
+      },
+      tooSmall: {
+        type: Boolean,
+        observer: '_tooSmallChanged'
+      }
+    },
+
+    _tooSmallChanged: function(newValue, oldValue) {
+      this.toggleClass('small', newValue);
+    },
+
+    // Element Lifecycle
+
+    ready: function() {
+      // `ready` is called after all elements have been configured, but
+      // propagates bottom-up. This element's children are ready, but parents
+      // are not.
+      //
+      // This is the point where you should make modifications to the DOM (when
+      // necessary), or kick off any processes the element wants to perform.
+    },
+    attached: function() {
+      // `attached` fires once the element and its parents have been inserted
+      // into a document.
+      //
+      // This is a good place to perform any work related to your element's
+      // visual state or active behavior (measuring sizes, beginning animations,
+      // loading resources, etc).
+    },
+    detached: function() {
+      // The analog to `attached`, `detached` fires when the element has been
+      // removed from a document.
+      //
+      // Use this to clean up anything you did in `attached`.
+    }
+  });
+</script>
+
