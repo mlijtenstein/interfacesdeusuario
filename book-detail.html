@@ -19,12 +19,16 @@
     width: 25em;
     height: 25em;*/
     /*width: 250px;*/
+    float: left;
     width: 250px;
-   	height: 550px;
+   	height: 600px;
    	background-color: black;
    	display: block;
    	margin: 0;
    	padding: 0;
+   	margin-right: 20px;
+   	margin-left: 20px;
+
    }
 
 
@@ -57,14 +61,16 @@
 
 
   <template>
-  	<div id="book-container">
-      <iron-image src="[[ book.image ]]" sizing="contain"></iron-image>
-    </div>
-    <div id="book-title">
-    	<h4 >[[ book.title ]]</h4>
-    </div>
-    <div id="book-text">
-    	<span >[[ book.text ]]</span>
+  	<div on-click="handleClick">
+	  	<div id="book-container">
+	      <iron-image src="[[ book.image ]]" sizing="contain"></iron-image>
+	    </div>
+	    <div id="book-title">
+	    	<h4 >[[ book.title ]]</h4>
+	    </div>
+	    <div id="book-text">
+	    	<span >[[ book.text ]]</span>
+	    </div>
     </div>
   </template>
 
@@ -87,6 +93,9 @@
 	          };
         	}
     	}
+    },
+    handleClick: function(e) {
+    	alert('click!');
     }
 });
 </script>

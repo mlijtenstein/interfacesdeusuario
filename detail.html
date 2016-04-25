@@ -1,0 +1,379 @@
+<!doctype html>
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<html>
+<head>
+
+  <!-- <meta charset="utf-8"> -->
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+
+  <script src="../webcomponentsjs/webcomponents-lite.js"></script>
+  <link rel="import" href="../paper-menu.html">
+  <link rel="import" href="../paper-item.html">
+  <link rel="import" href="../paper-buton.html">
+  <link rel="import" href="../iron-image.html">
+  <link rel="import" href="menu-simple.html">
+  <link rel="import" href="comment-card.html">
+
+  
+
+ 
+   <style>
+  
+  body{
+    margin: 0;
+    padding: 0;
+  }
+
+  h1 {
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 2.8rem;
+    line-height: 1.2;
+    margin-top: 2.5rem;
+    margin-bottom: 1.25rem;
+    color: white;
+}
+
+h2 {
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-top: 2.5rem;
+    margin-bottom: 1.25rem;
+    color: #2d2d2d;
+    text-align: center;
+}
+
+h3 {
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 1.4rem;
+    line-height: 1.4;
+    margin-top: 0rem;
+    margin-bottom: 1.25rem;
+    color: #2d2d2d;
+    text-align: center;
+}
+
+h4 {
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 1.3rem;
+    line-height: 1.4;
+    text-align: left;
+    margin-top: 0rem;
+    margin-bottom: 1.25rem;
+    color: white;
+}
+
+h5{
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-transform: uppercase;
+    letter-spacing: .07rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1.25rem;
+    color: #2d2d2d;
+    text-align: center;
+}
+
+h6 {
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 1.2rem;
+    line-height: 1.4;
+    margin-top: 0rem;
+    margin-bottom: 1.25rem;
+    color: #2d2d2d;
+}
+
+
+p {
+    font-family: Roboto;
+    font-weight: 300;
+    font-size: .9rem;
+    line-height: 1.8;
+    text-align: center;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    color: #2d2d2d;
+}
+
+footer {
+    line-height: 1.4em;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    background-color: #232222;
+    min-height: 16rem;
+}
+
+
+
+.detalle_libro {
+    float: none;
+    display: block;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    min-height: 400px;
+}
+
+.grilla_libro {
+    display: block;
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1000px;
+    float: left;
+}
+
+.texto_libro{
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 2%;
+    width: 49%;
+    clear: right;
+    max-width: inherit;
+    float: right;
+}
+
+.libro_imagen{
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    width: 49%;
+    clear: none;
+    max-width: inherit;
+}
+
+.libro_tamano {
+    display: block;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 300px;
+}
+
+.imagen {
+  width: 300;
+  height: 450;
+  background-color: black;
+}
+
+.justificado p{
+  text-align: justify;
+}
+
+.comprar {
+    float: none;
+    display: block;
+    width: 100%;
+    margin-top: 2rem;
+    margin-right: auto;
+    margin-bottom: 2rem;
+    margin-left: auto;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    max-width: 300px;
+}
+
+.boton {
+    font-family: Montserrat;
+    font-size: .8rem;
+    text-align: center;
+    color: white;
+    background-color: #2faded;
+    border-radius: 4px;
+}
+paper-button {
+    font-family: Montserrat;
+    font-weight: 300;
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: .01em;
+    color: white;
+    background-color: #2faded;
+    border-radius: 4px;
+    float: none;
+    display: block;
+    margin-top: 2rem;
+    margin-left: 2rem;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    max-width: 170px;
+}
+
+.comentarios {
+    float: none;
+    display: block;
+    width: 100%;
+    vertical-align: top;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    background-color: #cbc6c6;
+}
+
+.titulo_comentarios{
+    float: none;
+    display: block;
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1000px;
+
+}
+
+.ingresar_comentario {
+    float: none;
+    display: block;
+    width: 100%;
+    margin-top: 5rem;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 500px;
+}
+
+.nombre_comentarios {
+    float: none;
+    display: block;
+    width: 90%;
+    font-weight: 300;
+    vertical-align: top;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 20px;
+    padding-right: 5px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    background-color: #f2f2f2;
+    border: none;
+    max-width: 500px;
+    border-radius: 5px;
+    font-size: medium;
+}
+
+.input_comentarios {
+    border: none!important;
+    background: none!important;
+    padding: 0!important;
+    font-size: inherit!important;
+    font-family: inherit!important;
+    line-height: inherit!important;
+    font-weight: inherit!important;
+    color: inherit!important;
+    text-decoration: inherit!important;
+}
+
+.comentar_comentarios {
+    float: none;
+    display: block;
+    width: 90%;
+    font-weight: 300;
+    vertical-align: top;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 20px;
+    padding-right: 5px;
+    padding-bottom: 100px;
+    padding-left: 20px;
+    background-color: #f2f2f2;
+    border: none;
+    max-width: 500px;
+    border-radius: 5px;
+    font-size: medium;
+    margin-top: 20px;
+}
+
+.btn_agregar {
+    float: none;
+    display: block;
+    width: 90%;
+    vertical-align: top;
+    margin-top: 1rem;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    max-width: 300px;
+}
+
+  </style>
+
+
+
+
+</head>
+<body>
+<menu-simple></menu-simple>
+<div id="detalle_libro" class="detalle_libro">
+  <div id="grilla_libro" class="grilla_libro">
+    <div class="texto_libro">
+      <h2>Harry Potter y las reliquias de la Muerte </h2>
+      <div class="justificado">
+          <p>Es el séptimo y último libro de la serie literaria Harry Potter, escrita por la autora británica J. K. Rowling. El libro se publicó el 21 de julio de 2007, cerrando la serie que empezó diez años antes con la publicación de Harry Potter y la piedra filosofal en 1997. Este último libro narra los acontecimientos que siguen directamente al libro anterior: Harry Potter y el misterio del príncipe, y concluye con el enfrentamiento final, largamente esperado, entre Harry Potter y sus amigos, y Lord Voldemort y sus sirvientes, los Mortífagos.</p>
+          <p><strong>Disponibilidad: </strong> Existe una gran cantidad de copias al momento para ser vendidas.</p>
+          <p><strong> Valoración: </strong> Su evaluación en promedio fue de 4 en 5 puntos. </p>
+      </div>
+    </div>
+    <div class="libro_imagen">
+      <div class="libro_tamano">
+      <div class="imagen" >
+      </div>
+        <!--<img src="Desarrollo de interfaces graficas/Imagenes/07_hp_las_reliquias_de_la_muerte_2015_300_rgb.jpg">-->
+      </div>
+      <div class="comprar">
+          <paper-button>COMPRAR POR $500</paper-button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="comentarios">
+  <div class="titulo_comentarios ">
+    <h2>COMENTARIOS</h2>
+  </div>
+    <comment-card></comment-card>
+    <comment-card></comment-card>
+    <comment-card></comment-card>
+
+    <div class="ingresar_comentarios">
+      <h2>Ingresar comentario...</h2>
+    </div>
+    <div class="input_comentarios ">
+        <input type="text" class="nombre_comentarios" placeholder="Nombre" name="Nombre">
+
+        <input type="textArea" class="comentar_comentarios" placeholder="Comentarios" name="Comentarios">
+    </div>
+    <div class="btn_agregar">
+      <paper-button> Agregar </paper-button>
+    </div>
+      
+</div>
+
+
+
+</body>
+</html>
