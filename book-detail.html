@@ -2,6 +2,7 @@
 
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../iron-image/iron-image.html">
+<link rel="import" href="../paper-tooltip/paper-tooltip.html">
 
 <dom-module id="book-detail">
   <style>
@@ -26,9 +27,7 @@
    	display: block;
    	margin: 0;
    	padding: 0;
-   	margin-right: 20px;
-   	margin-left: 20px;
-
+   	margin: 25px 25px; 
    }
 
 
@@ -46,7 +45,6 @@
     #book-title {
       padding-left: 1em;
       align-items: center;
-      width: 100%;
       color: white;
     }
     #book-text {
@@ -57,10 +55,18 @@
       text-align: justify;
     }
 
+  paper-tooltip {
+    --paper-tooltip-background: black;
+    --paper-tooltip-text-color: var(--paper-pink-100);
+    width: 160px;
+  }
+
+
   </style>
 
 
   <template>
+  
   	<div on-click="handleClick">
 	  	<div id="book-container">
 	      <iron-image src="[[ book.image ]]" sizing="contain"></iron-image>
@@ -69,9 +75,11 @@
 	    	<h4 >[[ book.title ]]</h4>
 	    </div>
 	    <div id="book-text">
-	    	<span >[[ book.text ]]</span>
+	    	<content></content>
+	    	<!-- <span >[[ book.text ]]</span> -->
 	    </div>
     </div>
+    <paper-tooltip  position="top">Haga click para ver el detalle</paper-tooltip>
   </template>
 
 </dom-module>
@@ -89,13 +97,14 @@
 	          return {
 	            image: '',
 	            title:  '',
-	            text: '',
+	           
 	          };
         	}
     	}
     },
     handleClick: function(e) {
-    	alert('click!');
+    	// alert('click en ' + this.props);
+
     }
 });
 </script>

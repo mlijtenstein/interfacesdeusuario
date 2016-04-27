@@ -226,10 +226,14 @@ paper-button {
     padding-bottom: 5rem;
     background-color: #cbc6c6;
     min-height: 600px;
+    width: 100%;
+    text-align: center;
 }
 
 .grilla-libros{
-
+    display: inline-block;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 
@@ -266,17 +270,31 @@ paper-button {
 	
 <div class="libros">
   	
-<div class="grilla-libros">
-  	<book-detail book='{"image":"http://salamandra.info/sites/default/files/styles/book_detail/public/books/covers/hp_y_la_piedra_filosofal_2014_300_rgb.jpg?itok=iLSw_lPt","title":"Harry Potter y la piedra filosofal","text":"Harry vive con sus horribles tíos y el insoportable primo Dudley, hasta que su ingreso en el Colegio Hogwarts de Magia y Hechicería cambia su vida para siempre. Allí aprenderá trucos y encantamientos fabulosos, y hará un puñado de buenos amigos... aunque también algunos temibles enemigos. Y, sobre todo, conocerá los secretos que lo ayudarán a cumplir con su destino."}'></book-detail>
+	<div class="grilla-libros">
+
+	  	<book-detail book='{"image":"http://salamandra.info/sites/default/files/styles/book_detail/public/books/covers/hp_y_la_piedra_filosofal_2014_300_rgb.jpg?itok=iLSw_lPt","title":"Harry Potter y la piedra filosofal"}' onclick="call_detail(1)">Harry vive con sus horribles tíos y el insoportable primo Dudley, hasta que su ingreso en el Colegio Hogwarts de Magia y Hechicería cambia su vida para siempre. Allí aprenderá trucos y encantamientos fabulosos, y hará un puñado de buenos amigos... aunque también algunos temibles enemigos. Y, sobre todo, conocerá los secretos que lo ayudarán a cumplir con su destino.</book-detail>
 
 
-	<book-detail book='{"image":"http://salamandra.info/sites/default/files/styles/book_detail/public/books/covers/267-9-Harry%20Potter-La%20camara%20secreta-Bolsillo-72-rgb-354%20pixels%20altura.jpg?itok=Au5ktnlG","title":"Harry Potter y la camara secreta","text":"Tras derrotar una vez más a lord Voldemort, su siniestro enemigo en Harry Potter y la piedra filosofal, Harry espera impaciente en casa de sus insoportables tíos el inicio del segundo curso del Colegio Hogwarts de Magia y Hechicería. Sin embargo, la espera dura poco, pues un elfo aparece en su habitación y le advierte que una amenaza mortal se cierne sobre la escuela."}'></book-detail>
+		<book-detail book='{"image":"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQUVk2U4BjsQUiSX6wSqlYgjqIyaa6iva47DiwUKEHYaPQCy5d0AK3HPQ","title":"Harry Potter y la camara secreta"}' onclick="call_detail(2)">Tras derrotar una vez más a lord Voldemort, su siniestro enemigo en Harry Potter y la piedra filosofal, Harry espera impaciente en casa de sus insoportables tíos el inicio del segundo curso del Colegio Hogwarts de Magia y Hechicería. Sin embargo, la espera dura poco, pues un elfo aparece en su habitación y le advierte que una amenaza mortal se cierne sobre la escuela.</book-detail>
 
-	<book-detail book='{"image":"}http://salamandra.info/sites/default/files/styles/book_detail/public/books/covers/06_hp_el_misterio_del_principe_2015_300_rgb.jpg?itok=tA6rPhCq","title":"Harry Potter y el misterio del principe","text":"Con dieciséis años cumplidos, Harry inicia el sexto curso en Hogwarts en medio de terribles acontecimientos que asolan Inglaterra. Elegido capitán del equipo de quidditch, los ensayos, los exámenes y las chicas ocupan todo su tiempo, pero la tranquilidad dura poco. A pesar de los férreos controles de seguridad que protegen la escuela, dos alumnos son brutalmente atacados."}'></book-detail>
+		<book-detail book='{"image":"http://salamandra.info/sites/default/files/styles/book_detail/public/books/covers/hp_y_el_prisionero_de_azkaban_2015_300_rgb.jpg?itok=V_bDz-VQ","title":"Harry Potter y el prisionero de Azkaban"}' onclick="call_detail(3)">De la prisión de Azkaban se ha escapado un terrible villano, Sirius Black, un asesino en serie que fue cómplice de lord Voldemort y que, dicen los rumores, quiere vengarse de Harry por haber destruido a su maestro. Por si esto fuera poco, entran en acción los dementores, unos seres abominables capaces de robarles la felicidad a los magos y de eliminar todo recuerdo hermoso de aquellos que se atreven a acercárseles. </book-detail>
 
-	<book-detail book='{"image":"http://salamandra.info/sites/default/files/styles/book_detail/public/books/covers/hp_y_la_camara_secreta.jpg?itok=Rq70k9mT","title":"Harry Potter y la camara secreta","text":"Tras derrotar una vez más a lord Voldemort, su siniestro enemigo en Harry Potter y la piedra filosofal, Harry espera impaciente en casa de sus insoportables tíos el inicio del segundo curso del Colegio Hogwarts de Magia y Hechicería. Sin embargo, la espera dura poco, pues un elfo aparece en su habitación y le advierte que una amenaza mortal se cierne sobre la escuela."}'></book-detail>
+		<book-detail book='{"image":"http://salamandra.info/sites/default/files/styles/book_detail/public/books/covers/hp_caliz_de_fuego_y_el_2015_300_rgb.jpg?itok=E8TCdqH7","title":"Harry Potter y el cáliz de fuego"}' onclick="call_detail(4)">Otro deplorable verano con los Dursley llega a su fin y Harry está impaciente por regresar a Hogwarts. A sus catorce años, sólo desea ser un joven mago como los demás y dedicarse a aprender nuevos sortilegios y asistir a los Mundiales de quidditch. Sin embargo, en Hogwarts le espera un desafío de grandes proporciones, por lo que tendrá que demostrar que ya no es un niño y que está preparado para vivir las nuevas y emocionantes experiencias que el futuro le depara.</book-detail>
 
-</div>
+	</div>
+
+	<div class="grilla-libros">
+
+	  	<book-detail book='{"image":"http://salamandra.info/sites/default/files/styles/book_detail/public/books/covers/362-1-HP_V_Bolsillo.jpg?itok=ewMBZQRJ","title":"Harry potter y la orden del Fénix"}' onclick="call_detail(5)">Las tediosas vacaciones de verano en casa de sus tíos todavía no han acabado y Harry se encuentra más inquieto que nunca. Apenas ha tenido noticias de Ron y Hermione, y presiente que algo extraño está sucediendo en Hogwarts. En efecto, cuando por fin comienza otro curso en el famoso colegio de magia y hechicería, sus temores se vuelven realidad. </book-detail>
+
+
+		<book-detail book='{"image":"http://salamandra.info/sites/default/files/styles/book_detail/public/books/covers/06_hp_el_misterio_del_principe_2015_300_rgb.jpg?itok=tA6rPhCq","title":"Harry Potter y el misterio del príncipe"}' onclick="call_detail(6)">En medio de graves acontecimientos que asolan el país, Harry inicia su sexto curso en Hogwarts. El equipo de quidditch, los exámenes y las chicas lo mantienen ocupado, pero la tranquilidad dura poco. A pesar de los férreos controles de seguridad, dos alumnos son brutalmente atacados. Dumbledore sabe que, tal como se anunciaba en la Profecía, Harry y Voldemort han de enfrentarse a muerte.</book-detail>
+
+		<book-detail book='{"image":"http://salamandra.info/sites/default/files/styles/book_detail/public/books/covers/07_hp_las_reliquias_de_la_muerte_2015_300_rgb.jpg?itok=yl4Fnrez","title":"Harry Potter y las Reliquias de la Muerte"}' onclick="call_detail(7)">La fecha crucial se acerca. Cuando cumpla los diecisiete, Harry perderá el encantamiento protector que lo mantiene a salvo. El anunciado combate a muerte con Voldemort es inminente, y la casi imposible misión de encontrar y destruir los Horrocruxes restantes es más urgente que nunca. Ha llegado el momento de tomar las decisiones más difíciles.</book-detail>
+
+		<book-detail book='{"image":"http://salamandra.info/sites/default/files/styles/book_detail/public/books/covers/hp_caliz_de_fuego_y_el_2015_300_rgb.jpg?itok=E8TCdqH7","title":"Harry Potter y el cáliz de fuego"}'>Otro deplorable verano con los Dursley llega a su fin y Harry está impaciente por regresar a Hogwarts. A sus catorce años, sólo desea ser un joven mago como los demás y dedicarse a aprender nuevos sortilegios y asistir a los Mundiales de quidditch. Sin embargo, en Hogwarts le espera un desafío de grandes proporciones, por lo que tendrá que demostrar que ya no es un niño y que está preparado para vivir las nuevas y emocionantes experiencias que el futuro le depara.</book-detail>
+
+	</div>
 </div>
 <footer>
   <div class="dos_columnas footer">
@@ -296,6 +314,12 @@ paper-button {
 </footer>
 
 </body>
+
+<script>
+function call_detail(id_book) {
+    window.location = "detail.html?id=" + id_book;
+}
+</script>
 </html>
 
 
