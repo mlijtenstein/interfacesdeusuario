@@ -2,10 +2,10 @@
 
 <link rel="import" href="../polymer/polymer.html">
 <script src="../webcomponentsjs/webcomponents-lite.js"></script>
-  <link rel="import" href="../paper-menu.html">
-  <link rel="import" href="../paper-item.html">
-  <link rel="import" href="../paper-buton.html">
-  <link rel="import" href="../paper-menu-button.html">
+  <link rel="import" href="../paper-menu/paper-menu.html">
+  <link rel="import" href="../paper-item/paper-item.html">
+  <link rel="import" href="../paper-button/paper-button.html">
+  <link rel="import" href="../paper-menu-button/paper-menu-button.html">
 
 
  <dom-module id="menu-simple">
@@ -50,7 +50,7 @@
 	paper-menu{
 		float: right;
 		padding-right: 2em;
-	   display: inline-block;
+	  display: inline-block;
 
 	}
 	paper-item {
@@ -92,10 +92,10 @@
      <div class="menu_navigation">
        <div class="items">
         <paper-menu>
-         <paper-item>Home</paper-item>
-          <paper-item>Autor</paper-item>
-          <paper-item>Libros</paper-item>
-          <paper-item class="paper-blue">Subscribite</paper-item>
+         <paper-item>[[ list.text1 ]]</paper-item>
+          <paper-item>[[ list.text2 ]]</paper-item>
+          <paper-item>[[ list.text3 ]]</paper-item>
+          <paper-item class="paper-blue">[[ list.button1 ]]</paper-item>
         </paper-menu>       
       </div>
      </div>

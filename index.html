@@ -15,12 +15,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
 
   <script src="../webcomponentsjs/webcomponents-lite.js"></script>
-  <link rel="import" href="../paper-menu.html">
-  <link rel="import" href="../paper-item.html">
-  <link rel="import" href="../paper-buton.html">
-  <link rel="import" href="../iron-image.html">
+  <link rel="import" href="../paper-button/paper-button.html">
+  <link rel="import" href="../iron-image/iron-image.html">
   <link rel="import" href="menu-simple.html">
   <link rel="import" href="book-detail.html">
+  <link rel="import" href="footer-simple.html">
 
   
 
@@ -88,17 +87,17 @@ p {
     color: #2d2d2d;
 }
 
-footer {
+.footer {
     line-height: 1.4em;
     margin-right: auto;
     margin-left: auto;
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding-top: 30px;
+    padding-bottom: 30px;
     background-color: #232222;
     min-height: 16rem;
 }
 
-.dos_columnas {
+/*.dos_columnas {
     float: none;
     display: block;
     width: 90%;
@@ -131,7 +130,7 @@ footer {
     clear: none;
     max-width: inherit;
     float: left;
-}
+}*/
 
 
 .informacion p {
@@ -198,6 +197,7 @@ paper-button {
     padding-bottom: 20px;
     padding-left: 20px;
     max-width: 170px;
+    display: inline-block;
 }
 
 .fondo_blanco {
@@ -245,7 +245,7 @@ paper-button {
 
 </head>
 <body>
-<menu-simple></menu-simple>
+<menu-simple list='{"text1":"Home","text2":"Autor","text3":"Libros","button1":"Suscribite"}'></menu-simple>
 <div class="fondo_img">
 	<div>
 		<div class="frase">
@@ -275,7 +275,7 @@ paper-button {
 	  	<book-detail book='{"image":"http://salamandra.info/sites/default/files/styles/book_detail/public/books/covers/hp_y_la_piedra_filosofal_2014_300_rgb.jpg?itok=iLSw_lPt","title":"Harry Potter y la piedra filosofal"}' onclick="call_detail(1)">Harry vive con sus horribles tíos y el insoportable primo Dudley, hasta que su ingreso en el Colegio Hogwarts de Magia y Hechicería cambia su vida para siempre. Allí aprenderá trucos y encantamientos fabulosos, y hará un puñado de buenos amigos... aunque también algunos temibles enemigos. Y, sobre todo, conocerá los secretos que lo ayudarán a cumplir con su destino.</book-detail>
 
 
-		<book-detail book='{"image":"https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQUVk2U4BjsQUiSX6wSqlYgjqIyaa6iva47DiwUKEHYaPQCy5d0AK3HPQ","title":"Harry Potter y la camara secreta"}' onclick="call_detail(2)">Tras derrotar una vez más a lord Voldemort, su siniestro enemigo en Harry Potter y la piedra filosofal, Harry espera impaciente en casa de sus insoportables tíos el inicio del segundo curso del Colegio Hogwarts de Magia y Hechicería. Sin embargo, la espera dura poco, pues un elfo aparece en su habitación y le advierte que una amenaza mortal se cierne sobre la escuela.</book-detail>
+		<book-detail book='{"image":"http://salamandra.info/sites/default/files/styles/book_detail/public/books/covers/hp_y_la_camara_secreta_2014_300_rgb.jpg?itok=Be6_W0ul","title":"Harry Potter y la camara secreta"}' onclick="call_detail(2)">Tras derrotar una vez más a lord Voldemort, su siniestro enemigo en Harry Potter y la piedra filosofal, Harry espera impaciente en casa de sus insoportables tíos el inicio del segundo curso del Colegio Hogwarts de Magia y Hechicería. Sin embargo, la espera dura poco, pues un elfo aparece en su habitación y le advierte que una amenaza mortal se cierne sobre la escuela.</book-detail>
 
 		<book-detail book='{"image":"http://salamandra.info/sites/default/files/styles/book_detail/public/books/covers/hp_y_el_prisionero_de_azkaban_2015_300_rgb.jpg?itok=V_bDz-VQ","title":"Harry Potter y el prisionero de Azkaban"}' onclick="call_detail(3)">De la prisión de Azkaban se ha escapado un terrible villano, Sirius Black, un asesino en serie que fue cómplice de lord Voldemort y que, dicen los rumores, quiere vengarse de Harry por haber destruido a su maestro. Por si esto fuera poco, entran en acción los dementores, unos seres abominables capaces de robarles la felicidad a los magos y de eliminar todo recuerdo hermoso de aquellos que se atreven a acercárseles. </book-detail>
 
@@ -296,22 +296,9 @@ paper-button {
 
 	</div>
 </div>
-<footer>
-  <div class="dos_columnas footer">
-    <div class="datos_izquierda_footer">
-    <h4>Mikael & Alan </h4>
-    <p class="sub_p">Desarrollo diseño de interfaces <br> 
-  Obligatorio - Parte I <br>
-
-  12-04-2016 </p>
-      
-    </div>
-    <div class="datos_derecha_footer">
-      <h4>Follow us!</h4>
-    </div>
-
-  </div>
-</footer>
+<div class="footer">
+<footer-simple></footer-simple>
+</div>
 
 </body>
 

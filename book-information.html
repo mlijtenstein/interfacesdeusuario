@@ -25,82 +25,105 @@ Example:
 
 @demo
 -->
-<dom-module id="comment-card">
+<dom-module id="book-information">
   <style>
     :host {
-      display: block;
-      box-sizing: border-box;
-      margin: 1em;
-      padding: 1em;
-      min-width: 240px;
-      font-family: sans-serif;
-      border-radius: 2px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-      background-color: gray;
+   
     }
-    :host.small {
-      margin: 1em 0;
-    }
-    iron-image {
-      width: 4em;
-      height: 4em;
-      border-radius: 2em;
-    }
-    #author-container {
-      display: flex;
-      align-items: center;
-    }
-    #author-name {
-      font-size: medium;
-      padding-left: 1em;
-      fon
-    }
-    #comment-body {
-      font-size: medium;
-      font-weight: 300;
-      margin: 1em 1em 1em 3.5em;
-    }
-    #add-comment{
+ 
+ .texto_libro{
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 2%;
+    width: 49%;
+    clear: right;
+    max-width: inherit;
+    float: right;
+}
 
-    }
+.libro_imagen{
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    width: 49%;
+    clear: none;
+    max-width: inherit;
+}
+
+.libro_tamano {
+    display: block;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 300px;
+}
+
+.imagen {
+  width: 300;
+  height: 450;
+  /*background-color: black;*/
+}
+
+.justificado p {
+  text-align: justify;
+}
+
+.comprar {
+    float: none;
+    display: block;
+    width: 100%;
+    margin-top: 2rem;
+    margin-right: auto;
+    margin-bottom: 2rem;
+    margin-left: auto;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    max-width: 300px;
+}
+
 
   </style>
 
 <template>
 
  <iron-ajax auto
-                 url="api/books/[[ bookId ]]/comments.json"
+                 url="api/books/[[ bookId ]]/information.json"
                  params=""
                  handle-as="json"
-                 last-response="{{ author }}"
+                 last-response="{{ book }}"
                  debounce-duration="300"></iron-ajax>
 
 
-  <template is="dom-repeat" items="{{ author }}">
+  <template is='dom-repeat' items="{{ book }}">
       
-      <iron-media-query query="[[ mediaQuery ]]"  query-matches="{{ tooSmall }}"></iron-media-query>
+      <!-- <iron-media-query query="[[ mediaQuery ]]"  query-matches="{{ tooSmall }}"></iron-media-query> -->
 
-      <div id="author-container">
-        <iron-image src="[[ item.image ]]" sizing="cover"></iron-image>
-        <span id="author-name"><b>[[ item.name ]]</b></span>
+      <div class="texto_libro">
+      <h2>[[ item.title ]]</h2>
+      <div class="justificado">
+          <p>[[item.info]]</p>
+          <p><strong>Disponibilidad: </strong> [[item.disponibilidad]]</p>
+          <p><strong> Valoración: </strong> [[item.valor]] </p>
       </div>
-      <p id="comment-body">
-        <span>[[ item.text ]]</span>
-      </p>
-  </template>
-
-<div id="add-comment">
-
- <paper-button id="btnAddComment" raised > Agregar Comentario </paper-button>
-
-<div class="input_comentarios ">
-        <input type="text" id="nombre" class="nombre_comentarios" placeholder="Nombre" name="nombre">
-
-        <input type="textArea" id="comentario" class="comentar_comentarios" placeholder="Comentarios" name="comentario">
+    </div>
+    <div class="libro_imagen">
+      <div class="libro_tamano">
+      <div class="imagen" >
+              <img src=[[item.image]]>
+        </div>
+         <div class="comprar">
+          <paper-button style="background-color: #2faded;">COMPRAR POR $500</paper-button>
+        
+      </div>
+      </div >
+     
     </div>
 
-</div>
-
+  </template>
 
   </template>
 </dom-module>
@@ -108,9 +131,9 @@ Example:
 <script>
 
   Polymer({
-    is: 'comment-card',
+    is: 'book-information',
     properties: {
-      author: {
+      book: {
         type: Array,
         value: function() {
           return [];
@@ -119,12 +142,9 @@ Example:
       bookId: {
         type: Number
         // value: function() {
-        //   return {
-        //     null
-        //   };
-        //}
-      }
-    },
+        //   return 1;
+        // }
+      },
       mediaQuery: {
         type: String,
         value: function() {
@@ -134,22 +154,10 @@ Example:
       tooSmall: {
         type: Boolean,
         observer: '_tooSmallChanged'
-      },
-
-    listeners: {
-      'btnAddComment.tap': '_addComment'
+      }
     },
 
-     _addComment: function(e) {
-      var nombre_comentario = document.getElementById('nombre') 
-      var texto_comentario = document.getElementById('comentario')
-      this.push('author', { name: nombre_comentario.value,  image: 'https://pbs.twimg.com/profile_images/378800000822867536/3f5a00acf72df93528b6bb7cd0a4fd0c.jpeg',
-            text: texto_comentario.value  });
-
-      nombre_comentario.value = '';
-      texto_comentario.value = '';
-
-    },
+  
 
     _tooSmallChanged: function(newValue, oldValue) {
       this.toggleClass('small', newValue);
