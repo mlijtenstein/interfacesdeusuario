@@ -37,15 +37,101 @@ Example:
       border-radius: 2px;
       box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
       background-color: gray;
+      
     }
     :host.small {
       margin: 1em 0;
+    }
+    p{
+      text-align: left !important;
     }
     iron-image {
       width: 4em;
       height: 4em;
       border-radius: 2em;
     }
+    .comentario_juntos{
+    vertical-align: top;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #555555;
+    max-width: 530px;
+    border-radius: 5px;
+    font-size: medium;
+    }
+
+    /*.color:nth-child(4n+1){
+      background-color: blue;
+      .comentario_juntos:nth-child(2n+1){
+   background-color: white;
+    }}*/
+
+
+
+.nombre_comentarios {
+    float: none;
+    display: block;
+    width: 90%;
+    font-weight: 300;
+    vertical-align: top;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 20px;
+    padding-right: 5px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    background-color: #f2f2f2;
+    border: none;
+    max-width: 500px;
+    border-radius: 5px;
+    font-size: medium;
+}
+
+.input_comentarios {
+    border: none!important;
+    background: none!important;
+    padding: 0!important;
+    font-size: inherit!important;
+    font-family: inherit!important;
+    line-height: inherit!important;
+    font-weight: inherit!important;
+    color: inherit!important;
+    text-decoration: inherit!important;
+}
+
+.comentar_comentarios {
+    float: none;
+    display: block;
+    width: 90%;
+    font-weight: 300;
+    vertical-align: top;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 20px;
+    padding-right: 5px;
+    padding-bottom: 100px;
+    padding-left: 20px;
+    background-color: #f2f2f2;
+    border: none;
+    max-width: 500px;
+    border-radius: 5px;
+    font-size: medium;
+    margin-top: 20px;
+}
+
+.btn_agregar {
+    float: none;
+    display: block;
+    width: 90%;
+    margin-top: 2rem;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 20px;
+    max-width: 300px;
+    background-color: #2faded;
+}
+
+
     #author-container {
       display: flex;
       align-items: center;
@@ -58,11 +144,9 @@ Example:
     #comment-body {
       font-size: medium;
       font-weight: 300;
-      margin: 1em 1em 1em 3.5em;
+      margin-left: 3.5em;
     }
-    #add-comment{
-
-    }
+   
 
   </style>
 
@@ -79,24 +163,26 @@ Example:
   <template is="dom-repeat" items="{{ author }}">
       
       <iron-media-query query="[[ mediaQuery ]]"  query-matches="{{ tooSmall }}"></iron-media-query>
-
-      <div id="author-container">
+      <div class="comentario_juntos">
+      <div id="author-container" class="color" >
         <iron-image src="[[ item.image ]]" sizing="cover"></iron-image>
         <span id="author-name"><b>[[ item.name ]]</b></span>
       </div>
       <p id="comment-body">
         <span>[[ item.text ]]</span>
-      </p>
+      </p> </div>
   </template>
 
 <div id="add-comment">
 
- <paper-button id="btnAddComment" raised > Agregar Comentario </paper-button>
+ 
 
 <div class="input_comentarios ">
         <input type="text" id="nombre" class="nombre_comentarios" placeholder="Nombre" name="nombre">
 
         <input type="textArea" id="comentario" class="comentar_comentarios" placeholder="Comentarios" name="comentario">
+
+        <paper-button id="btnAddComment"  class="btn_agregar" raised > Agregar Comentario </paper-button>
     </div>
 
 </div>
