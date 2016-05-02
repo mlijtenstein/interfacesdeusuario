@@ -1,10 +1,10 @@
 {
-  "name": "comment-card",
+  "name": "jkrowling",
   "version": "1.0.0",
   "authors": [
     "Anonymous <anonymous@example.com>"
   ],
-  "description": "A responsive comment card element",
+  "description": "Page of J.K.Rowling",
   "keywords": [
     "web-component",
     "web-components",
