@@ -63,7 +63,9 @@ Example:
 }
 
 .justificado p {
-  text-align: justify;
+  text-align: left;
+      font-family: Garamond;
+
 }
 
 .comprar {
@@ -113,7 +115,7 @@ Example:
       <!-- <iron-media-query query="[[ mediaQuery ]]"  query-matches="{{ tooSmall }}"></iron-media-query> -->
 
       <div class="texto_libro">
-      <h2>[[ item.title ]]</h2>
+      <h2 style="font-family: Trebuchet MS">[[ item.title ]]</h2>
       <div class="justificado">
           <p>[[item.info]]</p>
           <p><strong>Disponibilidad: </strong> [[item.disponibilidad]]</p>
