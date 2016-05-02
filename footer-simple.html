@@ -7,6 +7,7 @@
  <dom-module id="footer-simple">
    <style>
    	:host{
+      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important;
 		/*  line-height: 1.4em;
 	    margin-right: auto;
 	    margin-left: auto;
@@ -16,8 +17,27 @@
 	    background-color: black;
       min-height: 16rem;*/
 	}
+  .small{
+background-color: red;
+  }
 
+p{
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important;
+}
+  img{
+    width: 60px;
+    height: 60px;
 
+  }
+footer {
+    line-height: 1.4em;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: #232222;
+    min-height: 16rem;
+}
 	.dos_columnas {
     float: none;
     display: block;
@@ -52,8 +72,35 @@
     max-width: inherit;
     float: left;
 }
+.p_footer{
+  text-align: left;
+  color: white;
+}
 
 
+@media (max-width: 520px) { 
+  footer{
+    min-height: 20rem;
+  }
+
+  .datos_izquierda_footer {
+    width: 100%;
+    margin: 2em 7.35em;
+    clear: left;
+    max-height: 170px;
+    float: left;
+}
+
+
+.datos_derecha_footer {
+    margin: 0 7.35em;
+    width: 100%;
+    float: left;
+    padding-bottom: 70px;
+}
+  
+
+}
 
 
  </style>
@@ -69,29 +116,32 @@
  <template>
 
 
+<footer>
+   	<div class="dos_columnas footer">
+  	    <div class="datos_izquierda_footer">
+  		    <h4>[[ datos.name ]]</h4>
+  		    <p class="p_footer">[[ datos.title ]] <br> 
+  		  [[ datos.subtitle ]] <br>
 
- 	<div class="dos_columnas footer">
-	    <div class="datos_izquierda_footer">
-		    <h4>[[ datos.name ]]</h4>
-		    <p class="sub_p">[[ datos.title ]] <br> 
-		  [[ datos.subtitle ]] <br>
+  		  [[ datos.date ]]</p>
+  		      
+  		</div>
+  	    <div class="datos_derecha_footer">
+  	      <h4>[[ datos.msg ]]</h4>
+          <div>
+            <!-- <paper-icon-button icon="favorite" title="heart" class="pink"></paper-icon-button>
+            <paper-icon-button icon="favorite" title="heart" class="pink"></paper-icon-button>
+            <paper-icon-button icon="favorite" title="heart" class="pink"></paper-icon-button> 
+   -->
+   <!-- <iron-icon src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTNwVEhw80nZrEIe8d2N-WlyoWyGyjWfS9T7g9zPs4yX7xoyPUQxLZsRS4"></iron-icon> -->
+            <img src="imagenes/facebook.png">
+            <img src="imagenes/twitter.png">
+            <img src="imagenes/youtube.png">
+          </div>
+  	    </div>
 
-		  [[ datos.date ]]</p>
-		      
-		</div>
-	    <div class="datos_derecha_footer">
-	      <h4>[[ datos.msg ]]</h4>
-        <div>
-          <!-- <paper-icon-button icon="favorite" title="heart" class="pink"></paper-icon-button>
-          <paper-icon-button icon="favorite" title="heart" class="pink"></paper-icon-button>
-          <paper-icon-button icon="favorite" title="heart" class="pink"></paper-icon-button> 
- -->
- <!-- <iron-icon src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTNwVEhw80nZrEIe8d2N-WlyoWyGyjWfS9T7g9zPs4yX7xoyPUQxLZsRS4"></iron-icon> -->
-
-        </div>
-	    </div>
-
-  </div>
+    </div>
+  </footer>
 
 <style is="custom-style">
             paper-icon-button.pink {

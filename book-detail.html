@@ -14,8 +14,10 @@
    	display: block;
    	margin: 0;
    	padding: 0;
-    font-family: Roboto !important;
-    font-weight: 300 !important;
+    font-weight: 200 !important;
+   }
+   h4{
+    text-align: center !important;
    }
 
 
@@ -31,9 +33,13 @@
       width: 100%;
     }
     #book-title {
+      width: 90%;
       padding-left: 1em;
       align-items: center;
+      text-align: center;
       color: white;
+      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important;
+      
     }
     #book-text {
       font-size: small;
@@ -41,6 +47,7 @@
       width: 90%;
       color: white;
       text-align: justify;
+      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important;
     }
 
   paper-tooltip {
@@ -62,7 +69,7 @@
 	    <div id="book-title">
 	    	<h4 >[[ book.title ]]</h4>
 	    </div>
-	    <div style="font-family: Garamond;" id="book-text">
+	    <div  id="book-text">
 	    	<content></content>
 	    	<!-- <span >[[ book.text ]]</span> -->
 	    </div>

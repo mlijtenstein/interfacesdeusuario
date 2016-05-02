@@ -29,7 +29,7 @@ h2{
 
 h3 {
     font-weight: 600;
-    font-size: 1.4rem;
+    font-size: 3.4rem;
     line-height: 1.4;
     margin-top: 0rem;
     margin-bottom: 1.25rem;
@@ -65,7 +65,7 @@ h5{
 }
 
 p {
-    font-family: Roboto;
+      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important;
     font-weight: 300;
     font-size: .9rem;
     line-height: 1.8;
@@ -77,17 +77,12 @@ p {
 
 .nombre{
     text-align:center;
+        font-size: 3.4rem;
+        margin: 0;
+
 }
 
-.footer {
-    line-height: 1.4em;
-    margin-right: auto;
-    margin-left: auto;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    background-color: #232222;
-    min-height: 16rem;
-}
+
 
 .informacion p {
        float: none;
