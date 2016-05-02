@@ -13,6 +13,14 @@
 	  :host .small {
 
 	  }
+    *{
+      margin: 0;
+      padding:0;
+    }
+    
+    .small {
+        display: none;
+    }
 	
 	.menu {
 	    float: none;
@@ -64,6 +72,8 @@
 	    padding-bottom: 10px;
 	    padding-left: 30px;
 	    color: white;
+          text-decoration: none;
+
 
 	}
 	.paper-item:hover {
@@ -135,7 +145,7 @@
       mediaQuery: {
         type: String,
         value: function() {
-          return "(max-width: 320px)";
+          return "(max-width: 480px)";
         }
       },
       tooSmall: {
