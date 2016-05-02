@@ -38,8 +38,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 </head>
 <body>
-<menu-simple></menu-simple>
-<div id="detalle_libro" class="detalle_libro">
+<menu-simple list='{"text1":"Home","text2":"Detalle","text3":"Comentarios","button1":"Suscribite"}'></menu-simple>
+<div id="detalle" class="detalle_libro">
+    <a name="detalle"></a>
+
   <div id="grilla_libros" class="grilla_libro">
 
 
@@ -48,8 +50,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   </div>
 </div>
 
-<div class="comentarios">
-  <div class="titulo_comentarios ">
+<div id="Comentarios" class="comentarios">
+    <a name="Comentarios"></a>
+
+  <div  class="titulo_comentarios ">
     <h2>COMENTARIOS</h2>
   </div>
     <comment-card id="comment_card" bookId=''></comment-card>
