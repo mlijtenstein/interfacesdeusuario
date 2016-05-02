@@ -43,10 +43,7 @@ Example:
 }
 
 .libro_imagen{
-    margin-top: 0;
-    margin-right: 0;
-    margin-bottom: 0;
-    margin-left: 0;
+    margin: 0;
     width: 49%;
     clear: none;
     max-width: inherit;
@@ -63,7 +60,6 @@ Example:
 .imagen {
   width: 300;
   height: 450;
-  /*background-color: black;*/
 }
 
 .justificado p {
@@ -74,17 +70,31 @@ Example:
     float: none;
     display: block;
     width: 100%;
-    margin-top: 2rem;
     margin-right: auto;
-    margin-bottom: 2rem;
     margin-left: auto;
     padding-top: 20px;
     padding-right: 20px;
     padding-bottom: 20px;
     padding-left: 20px;
     max-width: 300px;
+    background-color: #2faded;
 }
 
+@media (max-width: 690px) { 
+  
+  .texto_libro{
+    width: 90%;
+    margin: 0 auto;
+  }
+
+.libro_imagen{
+    width: 80%;
+   margin: 0 auto;
+}
+
+
+
+} 
 
   </style>
 
@@ -114,10 +124,9 @@ Example:
       <div class="libro_tamano">
       <div class="imagen" >
               <img src=[[item.image]]>
-        </div>
-         <div class="comprar">
-          <paper-button style="background-color: #2faded;">COMPRAR POR $500</paper-button>
         
+          <paper-button class="comprar"style="">COMPRAR POR $500</paper-button>
+
       </div>
       </div >
      
