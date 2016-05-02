@@ -1,4 +1,4 @@
-<!--<!doctype html>
+<!DOCTYPE html>
 <!--
 @license
 Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
@@ -8,11 +8,11 @@ The complete set of contributors may be found at http://polymer.github.io/CONTRI
 Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 -->
-<!--<html>
+<html>
 <head>
 
-  <!-- <meta charset="utf-8"> -->
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
  
   <script src="../webcomponentsjs/webcomponents-lite.js"></script>
@@ -22,17 +22,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <link rel="import" href="menu-simple.html">
   <link rel="import" href="book-detail.html">
   <link rel="import" href="footer-simple.html">
-  <link rel="stylesheet" type="text/css" href="Estilos.css">
 
-
- 
-   
+  <link rel="stylesheet" type="text/css" href="styles.css">
 
 
 
 
 </head>
-<body>
+<body unresolved>
 <menu-simple list='{"text1":"Home","text2":"Autor","text3":"Libros","button1":"Suscribite"}'></menu-simple>
 <div class="fondo_img">
 	<div>
@@ -64,21 +61,21 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 	  	<book-detail class="margen-libro" book='{"image":"http://salamandra.info/sites/default/files/styles/book_detail/public/books/covers/hp_y_la_piedra_filosofal_2014_300_rgb.jpg?itok=iLSw_lPt","title":"Harry Potter y la piedra filosofal"}' onclick="call_detail(1)">Harry vive con sus horribles tíos y el insoportable primo Dudley, hasta que su ingreso en el Colegio Hogwarts de Magia y Hechicería cambia su vida para siempre. Allí aprenderá trucos y encantamientos fabulosos, y hará un puñado de buenos amigos... aunque también algunos temibles enemigos. Y, sobre todo, conocerá los secretos que lo ayudarán a cumplir con su destino.</book-detail>
 
 
-		<book-detail class="margen-libro"  book='{"image":"http://salamandra.info/sites/default/files/styles/book_detail/public/books/covers/hp_y_la_camara_secreta_2014_300_rgb.jpg?itok=Be6_W0ul","title":"Harry Potter y la camara secreta"}' onclick="call_detail(2)">Tras derrotar una vez más a lord Voldemort, su siniestro enemigo en Harry Potter y la piedra filosofal, Harry espera impaciente en casa de sus insoportables tíos el inicio del segundo curso del Colegio Hogwarts de Magia y Hechicería. Sin embargo, la espera dura poco, pues un elfo aparece en su habitación y le advierte que una amenaza mortal se cierne sobre la escuela.</book-detail>
+		<book-detail class="margen-libro"  book='{"image":"http://salamandra.info/sites/default/files/styles/book_detail/public/books/covers/hp_y_la_camara_secreta_2014_300_rgb.jpg?itok=Be6_W0ul","title":"Harry Potter y la camara secreta"}' onclick="call_detail(2)">Tras derrotar una vez más a lord Voldemort, su siniestro enemigo en Harry Potter y la piedra filosofal, Harry espera impaciente en casa de sus insoportables tíos el inicio del segundo curso del Colegio Hogwarts de Magia y Hechicería. Sin embargo, la espera dura poco, pues un elfo aparece en su habitación y le advierte una amenaza mortal se cierne sobre la escuela.</book-detail>
 
-		<book-detail  class="margen-libro"  book='{"image":"http://salamandra.info/sites/default/files/styles/book_detail/public/books/covers/hp_y_el_prisionero_de_azkaban_2015_300_rgb.jpg?itok=V_bDz-VQ","title":"Harry Potter y el prisionero de Azkaban"}' onclick="call_detail(3)">De la prisión de Azkaban se ha escapado un terrible villano, Sirius Black, un asesino en serie que fue cómplice de lord Voldemort y que, dicen los rumores, quiere vengarse de Harry por haber destruido a su maestro. Por si esto fuera poco, entran en acción los dementores, unos seres abominables capaces de robarles la felicidad a los magos y de eliminar todo recuerdo hermoso de aquellos que se atreven a acercárseles. </book-detail>
+		<book-detail  class="margen-libro"  book='{"image":"http://salamandra.info/sites/default/files/styles/book_detail/public/books/covers/hp_y_el_prisionero_de_azkaban_2015_300_rgb.jpg?itok=V_bDz-VQ","title":"Harry Potter y el prisionero de Azkaban"}' onclick="call_detail(3)">De la prisión de Azkaban se ha escapado un terrible villano, Sirius Black, un asesino en serie cómplice de lord Voldemort y dicen los rumores, quiere vengarse de Harry por haber destruido a su maestro. Ademas, unos seres abominables capaces de robarles la felicidad a los magos y de eliminar todo recuerdo hermoso de aquellos que se atreven a acercárseles. </book-detail>
 
-		<book-detail  class="margen-libro" book='{"image":"http://salamandra.info/sites/default/files/styles/book_detail/public/books/covers/hp_caliz_de_fuego_y_el_2015_300_rgb.jpg?itok=E8TCdqH7","title":"Harry Potter y el cáliz de fuego"}' onclick="call_detail(4)">Otro deplorable verano con los Dursley llega a su fin y Harry está impaciente por regresar a Hogwarts. A sus catorce años, sólo desea ser un joven mago como los demás y dedicarse a aprender nuevos sortilegios y asistir a los Mundiales de quidditch. Sin embargo, en Hogwarts le espera un desafío de grandes proporciones, por lo que tendrá que demostrar que ya no es un niño y que está preparado para vivir las nuevas y emocionantes experiencias que el futuro le depara.</book-detail>
+		<book-detail  class="margen-libro" book='{"image":"http://salamandra.info/sites/default/files/styles/book_detail/public/books/covers/hp_caliz_de_fuego_y_el_2015_300_rgb.jpg?itok=E8TCdqH7","title":"Harry Potter y el cáliz de fuego"}' onclick="call_detail(4)">Otro deplorable verano con los Dursley llega a su fin y Harry está impaciente por regresar a Hogwarts. Sólo desea ser un joven mago como los demás  Sin embargo, en Hogwarts le espera un desafío de grandes proporciones, por lo que tendrá que demostrar que ya no es un niño y que está preparado para vivir las nuevas y emocionantes experiencias que el futuro le depara.</book-detail>
 
 
 	  	<book-detail  class="margen-libro"  book='{"image":"http://salamandra.info/sites/default/files/styles/book_detail/public/books/covers/05_hp_la_orden_del_fenix_2014_300_rgb_0.jpg?itok=AXNKNKlz","title":"Harry potter y la orden del Fénix"}' onclick="call_detail(5)">Las tediosas vacaciones de verano en casa de sus tíos todavía no han acabado y Harry se encuentra más inquieto que nunca. Apenas ha tenido noticias de Ron y Hermione, y presiente que algo extraño está sucediendo en Hogwarts. En efecto, cuando por fin comienza otro curso en el famoso colegio de magia y hechicería, sus temores se vuelven realidad. </book-detail>
 
 
-		<book-detail class="margen-libro"  book='{"image":"http://salamandra.info/sites/default/files/styles/book_detail/public/books/covers/06_hp_el_misterio_del_principe_2015_300_rgb.jpg?itok=tA6rPhCq","title":"Harry Potter y el misterio del príncipe"}' onclick="call_detail(6)">En medio de graves acontecimientos que asolan el país, Harry inicia su sexto curso en Hogwarts. El equipo de quidditch, los exámenes y las chicas lo mantienen ocupado, pero la tranquilidad dura poco. A pesar de los férreos controles de seguridad, dos alumnos son brutalmente atacados. Dumbledore sabe que, tal como se anunciaba en la Profecía, Harry y Voldemort han de enfrentarse a muerte.</book-detail>
+		<book-detail class="margen-libro"  book='{"image":"http://salamandra.info/sites/default/files/styles/book_detail/public/books/covers/06_hp_el_misterio_del_principe_2015_300_rgb.jpg?itok=tA6rPhCq","title":"Harry Potter y el misterio del príncipe"}' onclick="call_detail(6)">En medio de graves acontecimientos que asolan el país, Harry inicia su sexto curso en Hogwarts. El equipo de quidditch, los exámenes y las chicas lo mantienen ocupado, pero la tranquilidad dura poco. A pesar de los férreos controles de seguridad, dos alumnos son brutalmente atacados. Dumbledore sabe que, Harry y Voldemort han de enfrentarse a muerte.</book-detail>
 
 		<book-detail class="margen-libro"  book='{"image":"http://salamandra.info/sites/default/files/styles/book_detail/public/books/covers/07_hp_las_reliquias_de_la_muerte_2015_300_rgb.jpg?itok=yl4Fnrez","title":"Harry Potter y las Reliquias de la Muerte"}' onclick="call_detail(7)">La fecha crucial se acerca. Cuando cumpla los diecisiete, Harry perderá el encantamiento protector que lo mantiene a salvo. El anunciado combate a muerte con Voldemort es inminente, y la casi imposible misión de encontrar y destruir los Horrocruxes restantes es más urgente que nunca. Ha llegado el momento de tomar las decisiones más difíciles.</book-detail>
 
-		<book-detail class="margen-libro"  book='{"image":"http://salamandra.info/sites/default/files/styles/book_detail/public/books/covers/hp_caliz_de_fuego_y_el_2015_300_rgb.jpg?itok=E8TCdqH7","title":"Harry Potter y el cáliz de fuego"}'>Otro deplorable verano con los Dursley llega a su fin y Harry está impaciente por regresar a Hogwarts. A sus catorce años, sólo desea ser un joven mago como los demás y dedicarse a aprender nuevos sortilegios y asistir a los Mundiales de quidditch. Sin embargo, en Hogwarts le espera un desafío de grandes proporciones, por lo que tendrá que demostrar que ya no es un niño y que está preparado para vivir las nuevas y emocionantes experiencias que el futuro le depara.</book-detail>
+		<book-detail class="margen-libro"  book='{"image":"http://salamandra.info/sites/default/files/styles/book_detail/public/books/covers/hp_caliz_de_fuego_y_el_2015_300_rgb.jpg?itok=E8TCdqH7","title":"Harry Potter y el cáliz de fuego"}'>Otro deplorable verano con los Dursley llega a su fin y Harry está impaciente por regresar a Hogwarts.Sólo desea ser un joven mago como los demás y dedicarse a aprender nuevos sortilegios y asistir a los Mundiales de quidditch. Por lo que tendrá que demostrar que ya no es un niño y que está preparado para vivir las nuevas y emocionantes experiencias que el futuro le depara.</book-detail>
 
 	</div>
 </div>
@@ -86,13 +83,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <footer-simple></footer-simple>
 
 
+  <script>
+  function call_detail(id_book) {
+      window.location = "detail.html?id=" + id_book;
+  }
+  </script>
 </body>
 
-<script>
-function call_detail(id_book) {
-    window.location = "detail.html?id=" + id_book;
-}
-</script>
 </html>
 
 
