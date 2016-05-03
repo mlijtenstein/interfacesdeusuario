@@ -1,11 +1,12 @@
 
-
-<link rel="import" href="../polymer/polymer.html">
 <script src="../webcomponentsjs/webcomponents-lite.js"></script>
-  <!--<link rel="import" href="../paper-menu/paper-menu.html">
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../iron-media-query/iron-media-query.html">
+  <link rel="import" href="../paper-menu-button/paper-menu-button.html">
+  <link rel="import" href="../paper-icon-button/paper-icon-button.html">
+  <link rel="import" href="../paper-menu/paper-menu.html">
   <link rel="import" href="../paper-item/paper-item.html">
-  <link rel="import" href="../paper-button/paper-button.html">
-  <link rel="import" href="../paper-menu-button/paper-menu-button.html">-->
+  <!-- <link rel="import" href="../paper-button/paper-button.html"> -->
 
 
  <dom-module id="menu-simple">
@@ -31,7 +32,7 @@
 	    margin-right: auto;
 	    margin-left: auto;
 	    background-color: #232222;
-	}
+  }
 
 	.menu_navigation {
 		    width: 90%;
@@ -104,18 +105,34 @@
   </style>
 
   <template>
+ <iron-media-query query="[[ mediaQuery ]]"  query-matches="{{ tooSmall }}"></iron-media-query>
+
    <div id="#menu" class="menu">
      <div class="menu_navigation">
        <div class="items">
+       <template is="dom-if" if="{{!tooSmall}}">
+
         <div class="peper-menu">
           <a class="paper-item" href="#[[ list.text1 ]]">[[ list.text1 ]]</a>
           <a class="paper-item" href="#[[ list.text2 ]]">[[ list.text2 ]]</a>
           <a class="paper-item" href="#[[ list.text3 ]]">[[ list.text3 ]]</a>
           <a class= "paper-item paper-blue" href="">[[ list.button1 ]]</a>
       </div>
+      </template>
+       <template is="dom-if" if="{{tooSmall}}">
+      <paper-menu-button style="margin-right: 25px;">
+        <paper-icon-button src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_2Td8RA8aYQWHKTCFildgPGznZL-0-VM4NWbkqZu7MkcMyuKE8d00VA" class="dropdown-trigger"></paper-icon-button>
+            <paper-menu class='dropdown-content'>
+             <paper-item>[[ list.text1 ]]</paper-item>
+              <paper-item>[[ list.text2 ]]</paper-item>
+              <paper-item>[[ list.text3 ]]</paper-item>
+              <paper-item>[[ list.button1 ]]</paper-item>
+              </paper-menu>
+        </paper-menu-button>
+    </template>
      </div>
 	</div>
-	
+      </div> 
   </template>
 </dom-module>
 
@@ -147,7 +164,7 @@
       mediaQuery: {
         type: String,
         value: function() {
-          return "(max-width: 480px)";
+          return "(max-width: 530px)";
         }
       },
       tooSmall: {
