@@ -30,13 +30,7 @@ Example:
     :host {
       display: block;
       box-sizing: border-box;
-      margin: 1em;
-      padding: 1em;
-      min-width: 240px;
-      font-family: sans-serif;
-      border-radius: 2px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-      background-color: gray;
+      
       
     }
     :host.small {
@@ -45,28 +39,35 @@ Example:
     p{
       text-align: left !important;
     }
+
+
+
+    .fondo_comentario{
+      margin: 0 auto;
+      padding: 1em;
+      max-width: 500px;
+      font-family: sans-serif;
+      border-radius: 2px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+      background-color: white;
+    }
+
+
     iron-image {
       width: 4em;
       height: 4em;
       border-radius: 2em;
     }
     .comentario_juntos{
-    vertical-align: top;
-    margin-right: auto;
-    margin-left: auto;
-    background-color: #555555;
-    max-width: 530px;
-    border-radius: 5px;
-    font-size: medium;
+      vertical-align: top;
+      margin-right: auto;
+      margin-left: auto;
+      background-color: #F5F5F5;
+      max-width: 530px;
+      min-height: 100px;
+      border-radius: 5px;
+      font-size: medium;
     }
-
-    /*.color:nth-child(4n+1){
-      background-color: blue;
-      .comentario_juntos:nth-child(2n+1){
-   background-color: white;
-    }}*/
-
-
 
 .nombre_comentarios {
     float: none;
@@ -97,6 +98,7 @@ Example:
     font-weight: inherit!important;
     color: inherit!important;
     text-decoration: inherit!important;
+    margin-top: 50px;
 }
 
 .comentar_comentarios {
@@ -127,7 +129,7 @@ Example:
     margin-right: auto;
     margin-left: auto;
     padding: 20px;
-    max-width: 300px;
+    max-width: 525px;
     background-color: #2faded;
 }
 
@@ -136,28 +138,60 @@ Example:
       display: flex;
       align-items: center;
     }
-    #author-name {
-      font-size: medium;
-      padding-left: 1em;
-      font-family: Trebuchet MS;
 
-      
+    #author-name {      
     }
+
+
     #comment-body {
-      font-size: medium;
+      font-size: small;
       font-weight: 300;
-      margin-left: 3.5em;
+      margin-left: 10.5em;
+      margin-right: 1em;
       font-family: Garamond;
+      padding-bottom: 10px;
 
-    }
 
-     #comment-date {
-      font-size: medium;
-      padding-left: 1em;
-      width: inherit;
-      text-align: right;
     }
    
+    .foto{
+      width: 25%;
+      padding-top: 5px;
+      padding-left: 10px;
+      float: left;
+    }
+    .autor_comentarios{
+      width: 100%;
+      padding-top: 20px;
+    }
+
+    #comment-date{
+      font-size: x-small;
+      font-style: oblique;
+      text-align: right;
+      margin-left: 30px;
+      color: grey;
+      margin-left: 200px;
+    }
+
+
+
+@media (max-width: 600px) { 
+   
+    .fondo_comentario{
+      
+      box-shadow: none;
+      background-color: #cbc6c6;
+    }
+
+    #comment-body {
+      margin-left: 4.5em;
+    }
+
+
+} 
+
+
 
   </style>
 
@@ -170,21 +204,26 @@ Example:
                  last-response="{{ author }}"
                  debounce-duration="300"></iron-ajax>
 
-
+<div class="fondo_comentario">
   <template is="dom-repeat" items="{{ author }}">
       
       <iron-media-query query="[[ mediaQuery ]]"  query-matches="{{ tooSmall }}"></iron-media-query>
       <div class="comentario_juntos">
-      <div id="author-container" class="color" >
-        <iron-image src="[[ item.image ]]" sizing="cover"></iron-image>
-        <span id="author-name"><b>[[ item.name ]]</b></span>
-        <span id="comment-date"><b>[[ item.date ]]</b></span>
+        <div id="author_container"  >
+          <div class="foto">
+            <iron-image src="[[ item.image ]]" sizing="cover"></iron-image>
+          </div>
+          <div class="autor_comentarios">
+            <span id="author-name"><b>[[ item.name ]]</b></span>
+            <span id="comment-date"><b>[[ item.date ]]</b></span>
+          </div>
+        </div>
+        <p id="comment-body">
+          <span>[[ item.text ]]</span>
+        </p> 
       </div>
-      <p id="comment-body">
-        <span>[[ item.text ]]</span>
-      </p> </div>
   </template>
-
+</div>
 <div id="add-comment">
 
  
@@ -248,7 +287,7 @@ Example:
 
       var today = yyyy + '-' + (mm[1]?mm:"0"+mm[0]) + '-' + (dd[1]?dd:"0"+dd[0]);
 
-      this.push('author', { name: nombre_comentario.value,  image: 'https://pbs.twimg.com/profile_images/378800000822867536/3f5a00acf72df93528b6bb7cd0a4fd0c.jpeg',
+      this.push('author', { name: nombre_comentario.value,  image: 'img4.jpg',
             text: texto_comentario.value, date:today});
 
       nombre_comentario.value = '';
